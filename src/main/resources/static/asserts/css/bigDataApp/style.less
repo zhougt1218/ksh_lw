@@ -1,0 +1,470 @@
+html {
+    font-size: 100px;
+  	height: 100%;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: miui,"Oxygen",Arial,"Hiragino Sans GB ","Microsoft YaHei","å¾®è½¯é›…é»‘","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
+}
+body {
+    width: 1920px;
+	height: 1080px;
+    padding: 0;
+    margin: 0;
+    color: #343434;
+    font-size: 24px;
+    -webkit-text-size-adjust: 100%!important;
+    transform: scale(1,1);
+    transform-origin: left top 0px;
+    overflow: hidden;
+}
+a, a:hover {
+    text-decoration: none;
+    outline: 0;
+}
+a,img{
+	border:none;
+	display: block;
+}
+li{
+	list-style:none;
+}
+h1,h2,h3,h4,h5{
+	font-weight: normal;
+}
+.overflowH{
+	overflow: hidden;
+}
+.flex{
+    display:flex;
+    justify-content: space-between;
+}
+.pull-left{ 
+	float:left;
+}
+.pull-right{ 
+	float:right;
+}
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+.clearfloat {
+    zoom: 1;
+}
+
+/*莱芜可视化平台-视联网*/
+.internet_connection{
+    background: url(../img/visit/back.png) no-repeat;
+    background-size: 100% 100%;
+    /*头部*/
+    .header{
+        height:86px;
+        color:#b8e7ff;
+        text-align: center;
+        font-size:16px;
+        .title{
+            width:560px;
+            height:55px;
+            .home{
+                    width:135px;
+                    line-height:55px;
+                } 
+            .text{
+                width:425px;
+                padding:0 35px;
+                line-height:48px;
+                text-align: center;
+                >a{
+                    color:#b8e7ff;
+                    &:hover{
+                        color:#fff;
+                    }
+                }
+            } 
+        }
+        .img{
+            width:380px;
+            img{
+                margin:15px auto 0;
+                width:195px;
+                height:51px;
+            }
+        }
+        .time_close{
+            width:564px;
+            height:55px;
+            .time{
+                width:425px;
+                padding:0 35px;
+                line-height:48px;
+                text-align: center;
+                >span{
+                    margin:0 9px;
+                }
+            }
+            .close{
+                width:135px;
+                position:relative;
+                a{
+                    position: absolute;
+                    right:15px;
+                    top:15px;
+                    width:22px;
+                    height:22px;
+                    background: url(../img/visit/close.png) no-repeat;
+                }
+            }
+        }
+    
+    }
+
+    /*内容部分*/
+    .contain{
+        width:1398px;
+        margin:0 auto;
+        margin-top:138px;
+        >div>a{
+            color:#fff;
+            height:108px;
+            line-height:108px;
+            font-size:34px;
+            text-align: center;
+            &:hover{
+                color:#00ffff;
+            }
+        }
+        .left{
+            width:437px;
+            >a{
+            padding-left:25px;  
+            }
+            .yun_center{
+                width:437px; 
+                margin-bottom:65px;
+                background: url(../img/visit/but_1.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            .fuwu{
+                width:394px; 
+                margin-bottom:65px;
+                background: url(../img/visit/but_2.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            .jiaotong{
+                width:394px;
+                margin-bottom:76px;
+                background: url(../img/visit/but_2.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            .huanjing{
+                width:432px;
+                background: url(../img/visit/but_1.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .right{
+            width:432px;
+            >a{
+            padding-right:25px;  
+            }
+            .shipin{
+                width:406px; 
+                margin-bottom:65px;
+                margin-left:27px;
+                background: url(../img/visit/but_3.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            .qiye{
+                width:361px; 
+                margin-bottom:65px;
+                margin-left:71px;
+                background: url(../img/visit/but_4.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            .gongan{
+                width:361px;
+                margin-bottom:76px;
+                margin-left:71px;
+                background: url(../img/visit/but_4.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            .dizhi{
+                width:432px;
+                background: url(../img/visit/but_5.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
+
+/*莱芜市电子政务和大数据可视化管理平台*/
+.management{
+    background: url(../img/management/back.png) no-repeat;
+    background-size: 100% 100%;
+    .header{
+        width:100%;
+        height:165px;
+        padding-top:80px;
+        .image{
+            margin:0 auto;
+            width:863px;
+            height:65px;
+            img{
+                width:100%;
+            }
+        }
+    }
+    .contain{
+        width:1206px;
+        margin:0 auto;
+        margin-top:80px;
+        font-size:22px;
+        >div{
+            position: relative;
+            >a{
+                position:absolute;
+                background-size: 100% 100%;
+                color:#fff;
+                text-align:center;
+                &:hover{
+                    color:#00ffff;
+                }
+            }
+        }
+        .left{
+            width:565px;
+            .chain{
+                width:137px;
+                height:155px;
+                top:0px;
+                left:118px;
+                background: url(../img/management/chain.png) no-repeat;
+            }
+            .left_smallbox{
+                width:151px;
+                height:121px;
+                top:105px;
+                left:13px;
+                background: url(../img/management/left_box.png) no-repeat;
+            }
+            .lamp{
+                width:141px;
+                height:154px;
+                top:120px;
+                left:210px;
+                background: url(../img/management/lamp.png) no-repeat;
+            }
+            .shared{
+                width:228px;
+                height:253px;
+                line-height:50px;
+                top: 230px;
+                left: 268px;
+                padding:75px 20px;
+                font-size:32px;
+                background: url(../img/management/shared.png) no-repeat;
+            }
+            .resource{
+                width:164px;
+                height:183px;
+                line-height:36px;
+                top: 442px;
+                left: 205px;
+                padding:55px 15px;
+                background: url(../img/management/resource.png) no-repeat;
+            }
+            .exchange{
+                width:169px;
+                height:183px;
+                line-height:36px;
+                top: 442px;
+                left: 390px;
+                padding:55px 15px;
+                background: url(../img/management/exchange.png) no-repeat;
+            }
+        }
+        .right{
+            width:565px;
+            .once{
+                width:140px;
+                height:155px;
+                line-height:32px;
+                padding:45px 15px;
+                top:0px;
+                right:104px;
+                background: url(../img/management/once.png) no-repeat;
+            }
+            .right_smallbox{
+                width:151px;
+                height:121px;
+                top:105px;
+                right:2px;
+                background: url(../img/management/right_box.png) no-repeat;
+            }
+            .command{
+                width:140px;
+                height:154px;
+                line-height:32px;
+                padding:45px 15px;
+                top:120px;
+                right:196px;
+                background: url(../img/management/command.png) no-repeat;
+            }
+            .analysis{
+                width:230px;
+                height:253px;
+                line-height:50px;
+                top: 230px;
+                right: 253px;
+                padding:75px 20px;
+                font-size:32px;
+                background: url(../img/management/analysis.png) no-repeat;
+            }
+            .demonstration{
+                width:164px;
+                height:185px;
+                line-height:36px;
+                top: 442px;
+                right: 380px;
+                padding:55px 15px;
+                background: url(../img/management/demonstration.png) no-repeat;
+            }
+            .system{
+                width:163px;
+                height:183px;
+                line-height:36px;
+                top: 442px;
+                right: 195px;
+                padding:55px 15px;
+                background: url(../img/management/system.png) no-repeat;
+            }
+        }
+    }
+}
+
+/*典型示范应用*/
+.application{
+    background: url(../img/apply/back.png) no-repeat;
+    background-size: 100% 100%;
+    /*头部*/
+    .header{
+        height:86px;
+        color:#b8e7ff;
+        text-align: center;
+        font-size:16px;
+        .title{
+            width:560px;
+            height:55px;
+            .home{
+                    width:135px;
+                    line-height:55px;
+                } 
+            .text{
+                width:425px;
+                padding:0 95px 0 70px;
+                line-height:50px;
+                text-align: center;
+                >a{
+                    color:#b8e7ff;
+                    &:hover{
+                        color:#fff;
+                    }
+                }
+            } 
+        }
+        .img{
+            width:380px;
+            img{
+                margin:12px auto 0;
+                width:195px;
+                height:51px;
+            }
+        }
+        .time_close{
+            width:564px;
+            height:55px;
+            .time{
+                width:425px;
+                padding:0 35px;
+                line-height:48px;
+                text-align: center;
+                >span{
+                    margin:0 9px;
+                }
+            }
+            .close{
+                width:135px;
+                position:relative;
+                a{
+                    position: absolute;
+                    right:15px;
+                    top:15px;
+                    width:22px;
+                    height:22px;
+                    background: url(../img/visit/close.png) no-repeat;
+                }
+            }
+        }
+    
+    }
+
+    /*内容部分*/
+    .contain{
+        width:1255px;
+        margin:0 auto;
+        margin-top:135px;
+        font-size:46px;
+        line-height:65px;
+        >div>a{
+            margin:0 auto;
+            padding:30px 0;
+            color:#fff;
+            text-align: center;
+            &:hover{
+                color:#00ffff;
+            }
+        }
+        .left{
+            margin-top:120px;
+            padding-top:105px;
+            padding-left:15px;
+            width:457px;
+            height:530px;
+            background: url(../img/apply/topical2.png) no-repeat;
+            a{
+                width:200px;
+                height:200px; 
+            }
+        }
+        .center{
+            padding-top:86px;
+            width:377px;
+            height:478px;
+            background: url(../img/apply/topical1.png) no-repeat;
+            a{
+                margin:0 auto;
+                width:190px;
+                height:190px; 
+            }
+        }
+        .right{
+            margin-top:120px;
+            padding-top:105px;
+            width:444px;
+            height:530px;
+            background: url(../img/apply/topical3.png) no-repeat;
+            a{
+                width:200px;
+                height:200px;  
+            }
+        }
+    }
+}

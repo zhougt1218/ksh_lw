@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>共享平台统计</title>
+
+    <link href="assets/css/dataChange/custom.css" th:href="@{asserts/css/dataChange/custom.css}" rel="stylesheet">
+	</head>
+
+<body>
+
+    <canvas id="space" style="position:fixed;left:0;top:0;opacity:.5"></canvas>
+
+
+    <script>
+        window.requestAnimFrame = (function () {
+            return window.requestAnimationFrame
+        })();
+        var canvas = document.getElementById("space");
+        var c = canvas.getContext("2d");
+
+        var numStars = 1900;
+        var radius = '0.' + Math.floor(Math.random() * 9) + 1;
+        var focalLength = canvas.width * 2;
+        var warp = 0;
+        var centerX, centerY;
+
+        var stars = [],
+            star;
+        var i;
+
+        var animate = true;
+
+        initializeStars();
+
+        function executeFrame() {
+
+            if (animate)
+                requestAnimFrame(executeFrame);
+            moveStars();
+            drawStars();
+        }
+
+        function initializeStars() {
+            centerX = canvas.width / 2;
+            centerY = canvas.height / 2;
+
+            stars = [];
+            for (i = 0; i < numStars; i++) {
+                star = {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    z: Math.random() * canvas.width,
+                    o: '0.' + Math.floor(Math.random() * 99) + 1
+                };
+                stars.push(star);
+            }
+        }
+
+        function moveStars() {
+            for (i = 0; i < numStars; i++) {
+                star = stars[i];
+                star.z--;
+
+                if (star.z <= 0) {
+                    star.z = canvas.width;
+                }
+            }
+        }
+
+        function drawStars() {
+            var pixelX, pixelY, pixelRadius;
+
+            if (canvas.width != window.innerWidth || canvas.width != window.innerWidth) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initializeStars();
+            }
+            if (warp == 0) {
+                c.fillStyle = "rgba(0,10,20,.25)";
+                c.fillRect(0, 0, canvas.width, canvas.height);
+            }
+            c.fillStyle = "rgba(255, 255, 255, " + radius + ")";
+            for (i = 0; i < numStars; i++) {
+                star = stars[i];
+
+                pixelX = (star.x - centerX) * (focalLength / star.z);
+                pixelX += centerX;
+                pixelY = (star.y - centerY) * (focalLength / star.z);
+                pixelY += centerY;
+                pixelRadius = 1 * (focalLength / star.z);
+
+                c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
+                c.fillStyle = "rgba(209, 255, 255, " + star.o + ")";
+            }
+        }
+
+        executeFrame();
+    </script>
+
+
+
+    <header class="masthead-201806011729">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3">
+                    <h5 class="mt-2">
+                        <svg version="1.1" viewBox="0 0 16 16" xml:space="preserve" width="20" height="20"><g fill="currentcolor"><path fill="currentcolor" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6 S11.3,14,8,14z"></path> <polygon data-color="color-2" fill="currentcolor" points="9,4 7,4 7,9 12,9 12,7 9,7 "></polygon></g></svg>
+                        <time class="align-middle" id="currentDateTime"></time>
+                    </h5>
+                </div>
+                <a class="col-xs-6 text-center" href="%E9%A6%96%E9%A1%B5.html" th:href="@{/index}">
+                    <!-- <h2 class="my-l block">莱芜市电子政务和大数据可视化管理平台</h2> -->
+                    <img src="/resources/images/bigDataApp/management/title.png" th:src="@{/asserts/img/bigDataApp/management/title.png}" alt="">
+                    <!-- <small class="text-uppercase" style="opacity:.65">Laiwu e-government and big data visualization management platform</small> -->
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row text-center mb-2">
+            <div class="col-xs-2">
+                <h1 class="m-0 text-green" style="font-size:56px;font-family: DigitDe;">0.81</h1>
+                <label>目录总数(万)</label>
+
+            </div>
+            <div class="col-xs-2">
+                <h1 class="m-0 text-amber" style="font-size:56px;font-family: DigitDe;">0.73</h1>
+                <label>目录共享数/占比91.15%</label>
+            </div>
+            <div class="col-xs-2">
+                <h1 class="m-0 text-purple" style="font-size:56px;font-family: DigitDe;">0.46</h1>
+                <label>目录开放数/占比57.26%</label>
+            </div>
+        <!-- 未统计####################################### -->
+            <div class="col-xs-2">
+                <h1 class="m-0 text-grey" style="font-size:56px;font-family: DigitDe;">7,545</h1>
+                <label>服务总数(万)</label>
+            </div>
+            <div class="col-xs-2">
+                <h1 class="m-0 text-teal" style="font-size:56px;font-family: DigitDe;">6935</h1>
+                <label>平台用户数</label>
+            </div>
+            <div class="col-xs-2">
+                <h1 class="m-0 text-orange" style="font-size:56px;font-family: DigitDe;">161</h1>
+                <label>平台接入部门数量</label>
+            </div>
+            <!-- ########## -->
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+            <!-- 未统计################# -->
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">服务发布排行</h3>
+                    </header>
+                    <div class="panel-body">
+                        <figure id="echarts201804121502" style="height:185px;width:100%;"></figure>
+                    </div>
+                </section>
+                <!-- ################## -->
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">挂接资源分类及占比</h3>
+                    </header>
+                    <div class="panel-body">
+                        <figure id="echarts201803201130" style="height:185px;width:100%;"></figure>
+                    </div>
+                </section>
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">资源调用排行</h3>
+                    </header>
+                    <div class="panel-body">
+                        <figure id="echarts201804201443" style="height:185px;width:100%;"></figure>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xs-6">
+             
+                <figure id="echarts201805141107" style="width:100%;height:850px;"></figure>
+
+            </div>
+            <div class="col-xs-3">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">活跃部门排行</h3>
+                    </header>
+                    <div class="panel-body">
+                        <figure id="echarts201806141421" style="height:185px;width:100%;"></figure>
+                    </div>
+                </section>
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">省级资源申请情况</h3>
+                    </header>
+                    <div class="panel-body">
+                        <figure id="echarts201803202214" style="height:185px;width:100%;"></figure>
+                    </div>
+                </section>
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">资源申请排行</h3>
+                    </header>
+                    <div class="panel-body">
+                        <figure id="echarts201804121523" style="height:185px;width:100%;"></figure>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>       
+     </div>
+          
+
+    <script src="/assets/js/dataChange/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}"></script>
+    <script src="/assets/js/dataChange/echarts.min.js" th:src="@{/asserts/js/echarts.min.js}"></script>
+    <script src="/assets/js/dataChange/laiwu.js" th:src="@{/asserts/js/dataChange/laiwu.js}"></script>
+    <script src="/assets/js/dataChange/data.js" th:src="@{/asserts/js/dataChange/data.js}"> </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lange="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/asserts/css/visualManage/style.css" th:href="@{/asserts/css/visualManage/style.css}"/>
+	</head>
+	<body>
+		<div class="title">
+			
+		</div>
+		<img class="img1" src="/asserts/img/visualManage/1.png" th:src="@{/asserts/img/visualManage/1.png}"/>
+		<img class="img2" src="/asserts/img/visualManage/2.png" th:src="@{/asserts/img/visualManage/2.png}"/>
+		<img class="img3" src="/asserts/img/visualManage/3.png" th:src="@{/asserts/img/visualManage/3.png}"/>
+		<img class="img4" src="/asserts/img/visualManage/4.png" th:src="@{/asserts/img/visualManage/4.png}"/>
+	</body>
+	<script src="/asserts/js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+	<script>
+		(function(){
+			//重置屏幕宽高，根据宽高设置比例
+	  		    var pingmu_height = $(window).height();
+	  		    var pingmu_width = $(window).width();
+	  		    var a , b;
+	  		    if(pingmu_width >= 3840){
+	  		    	a = (pingmu_height/2160).toFixed(8);
+	  	  			b = (pingmu_width/3840).toFixed(8);
+	  
+	  		    } else {
+	  				a = (pingmu_height/1080).toFixed(8);
+	  				b = (pingmu_width/1920).toFixed(8);
+	  		    }
+	  			$("body").css("transform","scale("+b+","+a+")");
+		})(); 
+		window.addEventListener('resize', function(){
+			//重置屏幕宽高，根据宽高设置比例
+		    var pingmu_height = $(window).height();
+		    var pingmu_width = $(window).width();
+			var a = (pingmu_height/1080).toFixed(8);
+			var b = (pingmu_width/1920).toFixed(8);
+			$("body").css("transform","scale("+b+","+a+")");
+	  	});
+	</script>
+	<script type="text/javascript">
+		$(".title").click(function(){
+			window.location.href = "index";
+		})
+	</script>
+	<script src="/asserts/js/visualManage/script.js" th:src="@{/asserts/js/visualManage/script.js}" type="text/javascript" charset="utf-8"></script>
+</html>
+
+
+
+
+
+
+
+

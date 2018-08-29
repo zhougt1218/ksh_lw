@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>莱芜市电子政务和大数据可视化管理平台</title>
+	<link href="/asserts/css/bigDataApp/style.css" th:href="@{/asserts/css/bigDataApp/style.css}" rel="stylesheet" />
+</head>
+<body class="management">
+	<!-- 头部 -->
+	<div class="header">
+		<div class="image" onclick="index();" style="cursor:pointer;">
+			<img src="/resources/images/bigDataApp/management/title.png" th:src="@{/asserts/img/bigDataApp/management/title.png}" alt="">
+		</div>	
+	</div>
+
+	<!-- 内容部分 -->
+	<div class="contain flex">
+		<div class="left">
+			<a href="#" class="chain"></a>
+			<a href="#" class="left_smallbox"></a>
+			<a href="#" class="lamp"></a>
+			<a href="#" class="shared">数据<br>共享交换</a>
+			<a href="dataSource2" th:href="@{/dataSource2}" class="resource">数据<br>资源库</a>
+			<a href="http://59.206.202.178:81/console/laiwu" th:href="@{/dataChange}" class="exchange" target="_blank">共享<br>交换平台</a>
+		</div>
+		<div class="right">
+			<a href="#" class="once">“一次<br>办好”</a>
+			<a href="#" class="right_smallbox"></a>
+			<a href="emerge" th:href="@{emerge}" class="command">应急<br>指挥</a>
+			<a href="#" class="analysis">数据<br>分析应用</a>
+			<a href="application" th:href="@{/application}" class="demonstration">典型<br>示范应用</a>
+			<a href="#" class="system">决策<br>分析系统</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="/asserts/js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}"></script>
+	<script src="/asserts/js/bigDataApp/screen.js" th:src="@{/asserts/js/bigDataApp/screen.js}"></script>
+	<script>
+		function index(){
+			window.open("index","_self");
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

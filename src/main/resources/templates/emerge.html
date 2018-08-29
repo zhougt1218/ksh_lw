@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/asserts/css/emerge/style.css" th:href="@{/asserts/css/emerge/style.css}"/>
+		<script src="/asserts/js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<ul class="system_title">
+			<li><a href="bigDataApp" th:href="@{/bigDataApp}" style="color:#b8e7ff">返回</a></li>
+			<li><a href="application" th:href="@{/application}" style="color:#b8e7ff">典型示例应用</a></li>
+			<li><a href="#" style="color:#b8e7ff">决策分析预警</a></li>
+		</ul>
+		<div class="right_system_title">
+			<iframe width="195" scrolling="no" height="18" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=1&color=%2300B0F0&icon=5&wind=0&num=1&site=12"></iframe>
+			<span class="curent_time">16:45:30</span>
+			<p>2018年7月8日</p>
+		</div>
+		<div class="content">
+			<div class="left_content">
+				<p class="module_title">突发警情</p>
+				<div class="burst_situ">
+					<div class="video_line">
+						<div class="video_img">
+							
+						</div>
+						<div class="line_chosen">
+							视频线路：
+							<input type="button" value="线路一" />
+							<span class="line_icon"></span>
+						</div>
+					</div>
+					<div class="location">
+						<p class="location_title"  style="color:#D5702D">地点:</p>
+						<p><input type="text" value="某某小区 10 幢 3 单元 302室" /></p>
+						<p class="location_title" style="color:#D5702D">时间:</p>
+						<p><input type="text" value="2018-07-06 16:23" /></p>
+						<p class="location_title" style="margin-top: 55px;">小区建成年份</p>
+						<p><input type="text" value="2001年 " /></p>
+						<p class="location_title" >居住人口:</p>
+						<p><input type="text" value="4930人" /></p>
+						<p class="location_title" >小区总人数:</p>
+						<p><input type="text" value="3000户" /></p>
+					</div>
+				</div>
+				<div class="burst_list">
+					<table border="0" cellspacing="0" cellpadding="">
+						<tr>
+							<td width="15%"><span class="burst_icon"></span></td>
+							<td width="70%">
+								<p>地址:某某路某某路交叉路口</p>								
+								<p>详情:小汽车追尾,一人受伤,其他情况不明</p>								
+							</td>
+							<td>
+								<p>18:30</p>
+								<p>2018/7/6</p>
+							</td>
+						</tr>
+						<tr class="active">
+							<td width="15%"><span class="burst_icon1"></span></td>
+							<td width="70%">
+								<p>地址:某某路某某路交叉路口</p>								
+								<p>详情:小汽车追尾,一人受伤,其他情况不明</p>								
+							</td>
+							<td>
+								<p>18:30</p>
+								<p>2018/7/6</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="15%"></td>
+							<td width="70%">
+								<p>地址:某某路某某路交叉路口</p>								
+								<p>详情:小汽车追尾,一人受伤,其他情况不明</p>								
+							</td>
+							<td>
+								<p>18:30</p>
+								<p>2018/7/6</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="15%"></td>
+							<td width="70%">
+								<p>地址:某某路某某路交叉路口</p>								
+								<p>详情:小汽车追尾,一人受伤,其他情况不明</p>								
+							</td>
+							<td>
+								<p>18:30</p>
+								<p>2018/7/6</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="15%"></td>
+							<td width="70%">
+								<p>地址:某某路某某路交叉路口</p>								
+								<p>详情:小汽车追尾,一人受伤,其他情况不明</p>								
+							</td>
+							<td>
+								<p>18:30</p>
+								<p>2018/7/6</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="15%"></td>
+							<td width="70%">
+								<p>地址:某某路某某路交叉路口</p>								
+								<p>详情:小汽车追尾,一人受伤,其他情况不明</p>								
+							</td>
+							<td>
+								<p>18:30</p>
+								<p>2018/7/6</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="middle_content">
+				<div class="tmc">
+					实时路况
+				</div>
+					
+				<div class="search_scope">
+					搜索范围 
+					<p class="meters"><span class="active"></span>1500m</p>
+					<p class="meters"><span></span>1000m</p>
+					<p class="meters"><span></span>500m</p>
+				</div>
+				<div class="eme_res">
+					应急资源 
+					<p class="meters"><span ></span>医院</p>
+					<p class="meters"><span class="active"></span>警员</p>
+					<p class="meters"><span></span>警车</p>
+					<p class="meters"><span></span>消防车</p>
+					<p class="meters"><span class="active"></span>消防栓</p>
+					<p class="meters"><span class="active"></span>视频监控</p>
+				</div>
+				
+			</div>
+			<div class="right_content">
+				<div class="module_title">
+					智能应急资源
+					<p class="city_toggle"><span class="self active">本地市</span>/<span class="others">其他地市</span></p>
+				</div>
+				<div class="eme_resource">
+					<div class="res_content">
+						<p class="res_name"><span class="res_icon"></span>消防队</p>
+						<p class="res_distance">某消防支队 <span>距离 300m</span></p>
+						<ul class="res_detail">
+							<li>
+								<p>消防人数</p>
+								<p class="res_num yellow">20</p>
+							</li>
+							<li>
+								<p>今日在岗数</p>
+								<p class="res_num yellow">20</p>
+							</li>
+							<li>
+								<p>值班领导</p>
+								<p class="res_num blue">张林</p>
+							</li>
+							<li>
+								<p>联系电话</p>
+								<p class="res_num blue">187-8295-5603</p>
+							</li>
+						</ul>
+					</div>
+					<div class="res_content" style="margin-top: 20px;">
+						<p class="res_name"><span class="res_icon"></span>医院</p>
+						<p class="res_distance">某某第一人民医院 <span>距离 500m</span></p>
+						<ul class="res_detail">
+							<li>
+								<p>当前挂号人数</p>
+								<p class="res_num yellow">210</p>
+							</li>
+							<li>
+								<p>医护人员</p>
+								<p class="res_num green">300</p>
+							</li>
+							<li>
+								<p>空余床位</p>
+								<p class="res_num blue">20</p>
+							</li>
+							<li>
+								<p>联系电话</p>
+								<p class="res_num blue">187-8295-5603</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<p class="module_title eme_title">应急小组</p>
+				<div class="eme_group">
+					<div class="group_content">
+						<p class="group_title">疏散组 <span>正常</span></p>
+						<div class="group_content_content">
+							<div class="group_leader">
+								组长：贾志杰	
+								<p>187-8295-5603 <span class="group_phone"></span> <span class="group_video"></span></p>
+							</div>
+							<p class="group_detail">
+								详情：已经接到下达的疏散任务并已经组织相关人力物力出发赶往现场对现场情况已经有初步了解
+							</p>
+							<ul class="group_step">
+								<li class="step-bar active"></li>
+								<li class="step-num active">√
+									<span class="tips">正在执行</span>
+								</li>
+								<li class="step-bar active"></li>
+								<li class="step-bar"></li>
+								<li class="step-num"></li>
+								<li class="step-bar"></li>
+								<li class="step-bar"></li>
+								<li class="step-num"></li>
+								<li class="step-bar"></li>
+							</ul>
+						</div>
+					</div>
+					<div class="group_content">
+						<p class="group_title">救火组 <span>正常</span></p>
+						<div class="group_content_content">
+							<div class="group_leader">
+								组长：张林	
+								<p>187-8295-5603 <span class="group_phone"></span> <span class="group_video"></span></p>
+							</div>
+							<p class="group_detail">
+								详情：已经接到下达的疏散任务并已经组织相关人力物力出发赶往现场对现场情况已经有初步了解
+							</p>
+							<ul class="group_step">
+								<li class="step-bar active"></li>
+								<li class="step-num active">√
+									<span class="tips">正在执行</span>
+								</li>
+								<li class="step-bar active"></li>
+								<li class="step-bar"></li>
+								<li class="step-num"></li>
+								<li class="step-bar"></li>
+								<li class="step-bar"></li>
+								<li class="step-num"></li>
+								<li class="step-bar"></li>
+							</ul>
+						</div>
+						
+						
+						<div class="group_content">
+						<p class="group_title">救火组 <span>正常</span></p>
+						<div class="group_content_content">
+							<div class="group_leader">
+								组长：张林	
+								<p>187-8295-5603 <span class="group_phone"></span> <span class="group_video"></span></p>
+							</div>
+							<p class="group_detail">
+								详情：已经接到下达的疏散任务并已经组织相关人力物力出发赶往现场对现场情况已经有初步了解
+							</p>
+							<ul class="group_step">
+								<li class="step-bar active"></li>
+								<li class="step-num active">√
+									<span class="tips">正在执行</span>
+								</li>
+								<li class="step-bar active"></li>
+								<li class="step-bar"></li>
+								<li class="step-num"></li>
+								<li class="step-bar"></li>
+								<li class="step-bar"></li>
+								<li class="step-num"></li>
+								<li class="step-bar"></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+<script type="text/javascript">
+	(function(){
+		//重置屏幕宽高，根据宽高设置比例
+	    var pingmu_height = $(window).height();
+	    var pingmu_width = $(window).width();
+	    var a , b;
+	    if(pingmu_width >= 3840){
+	    	a = (pingmu_height/2160).toFixed(8);
+  			b = (pingmu_width/3840).toFixed(8);
+	    } else {
+			a = (pingmu_height/1080).toFixed(8);
+			b = (pingmu_width/1920).toFixed(8);
+	    }
+		$("body").css("transform","scale("+b+","+a+")");
+	})(); 
+	window.addEventListener('resize', function(){
+		//重置屏幕宽高，根据宽高设置比例
+	    var pingmu_height = $(window).height();
+	    var pingmu_width = $(window).width();
+		var a = (pingmu_height/1080).toFixed(8);
+		var b = (pingmu_width/1920).toFixed(8);
+		$("body").css("transform","scale("+b+","+a+")");
+    });
+</script>
+<script type="text/javascript">
+	$(function(){
+	setInterval(function(){
+		var myDate = new Date();
+		var year = myDate.getFullYear();
+		var month = myDate.getMonth()+1;
+		var day = myDate.getDate()
+		var time = myDate.toLocaleTimeString();
+		var week = myDate.getDay();
+		switch(week){
+			case 1 :week="星期一";break;
+			case 2 :week="星期二";break;
+			case 3 :week="星期三";break;
+			case 4 :week="星期四";break;
+			case 5 :week="星期五";break;
+			case 6 :week="星期六";break;
+			case 0 :week="星期日";break;
+		}
+		var date = year + " 年 " + month +" 月 " + day +" 日 ";
+		$(".curent_time").html(time);
+		$(".right_system_title p").html(date);
+	},1000);
+	
+});
+</script>
+	</body>
+		
+</html>
+
+
+
+

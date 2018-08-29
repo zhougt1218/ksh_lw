@@ -1,0 +1,12 @@
+$(".img1").click(function(){
+	window.open("internetConn","_self");
+});
+$(".img2").click(function(){
+	window.open("http://10.1.1.45:8888/leadsec-soc/");
+});
+$(".img3").click(function(){
+	window.open("system","_self");
+});
+$(".img4").click(function(){
+	window.open("http://10.1.90.101");
+});

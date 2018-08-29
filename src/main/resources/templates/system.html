@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/asserts/css/system/style.css" th:href="@{/asserts/css/system/style.css}"/>
+	</head>
+	<body>
+		<ul class="system_title">
+			<li class="active"><a href="visualManage" th:href="@{/visualManage}" style="color:#b8e7ff">返回</a></li>
+			<li><a style="color:#b8e7ff" href="http://10.1.90.101" target="_blank">政务云</a></li>
+			<li><a style="color:#b8e7ff" href="http://10.1.1.45:8888/leadsec-soc/" target="_blank">网络运行</a></li>
+			<li><a style="color:#b8e7ff" href="internetConn">视联网</a></li>
+		</ul>
+		<div class="timer">
+			<span class="right_sign">
+				
+			</span>
+			<p class="timer_show">
+				2018 年 8 月 1 日 星期三 15:51
+			</p>
+				
+		</div>
+		<div class="content">
+			<div class="content_left">
+				<p class="left_title">系统列表</p>
+				<p class="search_row" > <span class="search_icon" onclick="getSysOp();"></span><input type="text" placeholder="输入关键字查询" class="keywords"  /></p>
+				
+				<p class="system_list active" data-cate="ydj"><span class="list_icon"></span>已对接系统</p>
+				<p class="system_list" id="hall_system" ><span class="list_icon"></span>各委办局系统</p>
+					<ul class="system_ul">
+						<li data-cate="zfb" class="active">政府办</li>
+						<li data-cate="fgw"  >发改委</li>
+						<li data-cate="sfj">司法局</li>
+						<li data-cate="bb">编办</li>
+						<li data-cate="jcj">监察局</li>
+						<li data-cate="sjj">审计局</li>
+						<li data-cate="daj">档案局</li>
+						<li data-cate="swj">商务局</li>
+						<li data-cate="dsj">地税局</li>
+						<li data-cate="qxj">气象局</li>
+						<li data-cate="mtj">煤炭局</li>
+						<li data-cate="jxw">经信委</li>
+						<li data-cate="lfw">旅发委</li>
+						<li data-cate="tjj">统计局</li>
+						<li data-cate="hszh">红十字会</li>
+						<li data-cate="czj">财政局</li>
+						<li data-cate="wgxj">文广新局</li>
+						<li data-cate="lyhcxlhj">林业和城乡绿化局</li>
+						<li data-cate="mzj">民政局</li>
+						
+						<li data-cate="zjj">住建局</li>
+						<li data-cate="gsj">国税局</li>
+						<li data-cate="ghj">规划局</li>
+						<li data-cate="xfj">信访局</li>
+						<li data-cate="rh">人行</li>
+						<li data-cate="nyj">农业局</li>
+						<li data-cate="gxs">供销社</li>
+						<li data-cate="jyj">教育局</li>
+						<li data-cate="csglj">城市管理局</li>
+						<li data-cate="cxswj">城乡水务局</li>
+						<li data-cate="scjgj">市场监管局</li>
+						<li data-cate="kjj">科技局</li>
+						<li data-cate="rsj">人社局</li>
+						<li data-cate="gaj">公安局</li>
+						<li data-cate="fpb">扶贫办</li>
+						<li data-cate="ajj">安监局</li>
+						<li data-cate="gjj">公积金</li>
+						<li data-cate="cxjtysw">城乡交通运输委</li>
+						<li data-cate="hbj">环保局</li>
+						<li data-cate="wjw">卫计委</li>
+						<li data-cate="gtj" id="aaaa">国土局</li>
+						<li data-cate="zzb">组织部</li>
+						<li data-cate="zfw">政法委</li>
+						<li data-cate="gcqdsb">钢城区党史办</li>
+					</ul>
+				
+				
+			</div>
+			<div class="content_right">
+				<p class="right_title">已对接系统</p>
+				<div class="content_content">
+					
+					<div class="left_content_content">
+						
+						<ul class="system_show res_search">
+							<!-- <li>抱歉未找到您搜索的系统,请检查搜索关键词是否有误</li> -->
+						</ul>	
+						
+						<ul class="system_show fpb">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon fpb1"></span>扶贫业务管理系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show ajj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon ajj1"></span>智慧安监平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show gcqdsb">
+							<li class="active">
+								<p class="system_name" style="padding-top:22px"> <span class="system_icon gcqdsb1"></span>钢城区情网、区林业局、科技局、卫计局、区教育局、区食药监局、区监察局等</p>							
+							</li>
+						</ul>
+						
+						
+						
+						<ul class="system_show rsj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon rsj1"></span>社会保险征缴、支付及各项管理业务</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon rsj4"></span>社保查询网</p>							
+							</li>
+						</ul>
+						<ul class="system_show gaj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon gaj1"></span>“掌上通”基础警务管理系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon gaj4"></span>旅馆业治安管理信息系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon gaj7"></span>莱芜民爆公共安全监管平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show gjj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon gjj1"></span>公积金业务系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show cxjtysw">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon cxjtysw1"></span>稽查业务系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon cxjtysw4"></span>公路有关6个业务系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show hbj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon hbj1"></span>网格化空气监测系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon hbj4"></span>莱芜市车载应急指挥移动系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show wjw">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon wjw1"></span>全国免费孕前优生健康检查项目信息系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon wjw4"></span>“两非”案件信息管理系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon wjw7"></span>山东省流动人口信息管理系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show gtj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon gtj1"></span>国土办公自动化系统等13个</p>							
+							</li>
+						</ul>
+						<ul class="system_show zzb">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon zzb1"></span>星期日工程</p>							
+							</li>
+						</ul>
+						<ul class="system_show zfw">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon zfw1"></span>矛盾纠纷多元化解信息管理系统</p>							
+							</li>
+						</ul>
+						
+						
+						
+						
+						
+						
+						
+						
+						<ul class="system_show zjj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon zjj1"></span>公共能源检测平台</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon zjj4"></span>城乡建设领域专业人员管理信息系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon zjj7"></span>交易和产权管理系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon zjj10"></span>住房保障信息系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon zjj13"></span>房地产开发资质审批系统</p>							
+							</li>
+						</ul>
+						
+						
+						<ul class="system_show gsj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon gsj1"></span>共使用5个业务系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show ghj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon ghj1"></span>规划管理信息系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show xfj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon xfj1"></span>省信访信息系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show rh">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon rh1"></span>共使用5个业务系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show nyj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon nyj1"></span>农村产权交易平台</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon nyj4"></span>屠宰企业监管平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show gxs">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon gxs1"></span>全国供销合作社统计系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show jyj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon jyj1"></span>教育公共服务平台（含21个系统）</p>							
+							</li>
+						</ul>
+						<ul class="system_show csglj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon csglj1"></span>路灯无线远程控制系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show cxswj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon cxswj1"></span>山洪灾害检测平台</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon cxswj4"></span>国家水资源管理系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show scjgj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon scjgj1"></span>企业影像档案系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show kjj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon kjj1"></span>山东新材料产业（粉末冶金）专利信息公共服务平台</p>							
+							</li>
+						</ul>
+						
+						
+						
+						<ul class="system_show jxw">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon jxw1"></span>节能信息系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show lfw">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon lfw1"></span>共使用11个业务系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show tjj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon tjj1"></span>内网网站</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon tjj4"></span>“三农”地理信息系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show hszh">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon hszh1"></span>红十字会网络平台</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show czj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon czj1"></span>财政应用平台</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon czj4"></span>政府采购系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show wgxj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon wgxj1"></span>全国文化市场技术监管服务平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show lyhcxlhj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon lyhcxlhj1"></span>共使用9个业务系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show mzj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon mzj1"></span>金民工程</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon mzj4"></span>其余8个系统</p>							
+							</li>
+						</ul>
+						
+						
+						
+						
+						<ul class="system_show mtj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon mtj1"></span>全省煤炭安全生产综合监管信息平台</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show qxj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon qxj1"></span>气象信息综合分析处理系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon qxj4"></span>内部网站</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show swj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon swj1"></span><a style="color:#FFF" th:href="@{http://lwzhuisu.gov.cn/ipt/cityPlatform(token=${msg})}" target="_blank">重要产品追溯体系服务平台</a></p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon swj4"></span>进口许可证申领系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon swj7"></span>外贸运行监测系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show dsj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon dsj1"></span>金税三期税收管理系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon dsj4"></span>征管基础监控分析系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show daj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon daj1"></span>数字档案在线管理系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show sjj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon sjj1"></span>审计管理系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show jcj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon jcj1"></span>协同办公系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon jcj4"></span>信息报送系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show fgw">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon fgw1"></span>公共信用信息平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show sfj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon sfj1"></span>协同办公系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show bb">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon bb1"></span>机构编制综合管理信息系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon bb4"></span>机构编制综合管理信息系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show ydj">
+							<li class="active">
+								<p class="system_name"> <span class="system_icon ydj1"></span>大项目管理系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon ydj2"></span><a style="color:#FFF" href="http://59.224.126.134/portal/jsp/public/login.jsp" target="_blank">公共信用信息平台</a></p>		
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon ydj3"></span><a style="color:#FFF" href="http://59.206.202.178:81/console/laiwu" target="_blank">政务信息资源共享交换平台</a></p>		
+							</li>
+							<li>
+							    <p class="system_name"> <span class="system_icon ydj8"></span><a style="color:#FFF" href="http://www.sdmap.gov.cn/map.html" target="_blank">莱芜市天地图</a></p>
+							</li>
+						</ul>
+						<ul class="system_show zfb">
+							<li class="active">
+								<p class="system_name"><span class="system_icon zfb1"></span>网上审批系统</p>							
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb4"></span>频率台站管理</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb7"></span>政务通</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb10"></span>公文传输系统</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb13"></span>应急信息上报系统</p>		
+							</li>
+						</ul>
+					</div>
+					<div class="middle_content_content" >
+						<ul class="system_show res_search">
+							
+						</ul>
+						
+						
+						
+						
+						<ul class="system_show rsj">
+							<li >
+								<p class="system_name"> <span class="system_icon rsj2"></span>机关事业单位工资核算</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon rsj5"></span>平时考核系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show gaj">
+							<li >
+								<p class="system_name"> <span class="system_icon gaj2"></span>POC指挥调度平台</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon gaj5"></span>娱乐场所治安管理信息系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon gaj8"></span>莱芜公安“E监管”系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show gjj">
+							<li>
+								<p class="system_name"> <span class="system_icon gjj2"></span>公积金查询网站</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show cxjtysw">
+							<li >
+								<p class="system_name"> <span class="system_icon cxjtysw2"></span>道路运政管理</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon cxjtysw5"></span>协同办公系统（工程处）</p>							
+							</li>
+						</ul>
+						<ul class="system_show hbj">
+							<li >
+								<p class="system_name"> <span class="system_icon hbj2"></span>污染源在线监控系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon hbj5"></span>排污费征收全程信息化管理系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show wjw">
+							<li >
+								<p class="system_name"> <span class="system_icon wjw2"></span>山东省育龄妇女信息系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon wjw5"></span>国家基本公共卫生服务项目管理信息系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon wjw8"></span>莱芜市人口健康档案信息平台</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show gtj">
+							<li >
+								<p class="system_name"> <span class="system_icon gtj2"></span>地理信息公共平台等6个</p>							
+							</li>
+						</ul>
+						<ul class="system_show zzb">
+							<li >
+								<p class="system_name"> <span class="system_icon zzb2"></span>网上党群服务中心</p>							
+							</li>
+						</ul>
+						<ul class="system_show zfw">
+							<li >
+								<p class="system_name"> <span class="system_icon zfw2"></span>网格化社会治安综合治理信息平台</p>							
+							</li>
+						</ul>
+						
+						
+						
+						
+						
+						<ul class="system_show jyj">
+							<li>
+								<p class="system_name"> <span class="system_icon jyj2"></span>高中阶段统一招生录取平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show csglj">
+							<li>
+								<p class="system_name"> <span class="system_icon csglj2"></span>数字化城市管理监督指挥平台</p>							
+							</li>
+						</ul>
+						
+						
+						<ul class="system_show zjj">
+							<li>
+								<p class="system_name"> <span class="system_icon zjj2"></span>地理信息系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon zjj5"></span>建筑市场监管与诚信信息一体化平台</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon zjj8"></span>AFS档案管理系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon zjj11"></span>物业管理信息系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show nyj">
+							<li>
+								<p class="system_name"> <span class="system_icon nyj2"></span>农产品质量安全监管平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show cxswj">
+							<li>
+								<p class="system_name"> <span class="system_icon cxswj2"></span>水利综合应用平台</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon cxswj5"></span>水资源监测服务系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show scjgj">
+							<li>
+								<p class="system_name"> <span class="system_icon scjgj2"></span>OA办公系统</p>							
+							</li>
+						</ul>
+						
+						
+						
+						<ul class="system_show tjj">
+							<li>
+								<p class="system_name"> <span class="system_icon tjj2"></span>统计业务系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show czj">
+							<li>
+								<p class="system_name"> <span class="system_icon czj2"></span>OA公文系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show wgxj">
+							<li>
+								<p class="system_name"> <span class="system_icon wgxj2"></span>文博网</p>							
+							</li>
+						</ul>
+						<ul class="system_show mzj">
+							<li>
+								<p class="system_name"> <span class="system_icon mzj2"></span>城乡居民家庭经济状况核对系统</p>							
+							</li>
+						</ul>
+						
+						
+						<ul class="system_show mtj">
+							<li>
+								<p class="system_name"> <span class="system_icon mtj2"></span>煤炭安全数据采集</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show qxj">
+							<li>
+								<p class="system_name"> <span class="system_icon qxj2"></span>综合探测系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show dsj">
+							<li>
+								<p class="system_name"> <span class="system_icon dsj2"></span>存量房管理系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show swj">
+							<li>
+								<p class="system_name"> <span class="system_icon swj2"></span>农产品流通公共信息服务平台</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon swj5"></span>华交会管理平台</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon swj8"></span>加工贸易生产能 力证明审批系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show sjj">
+							<li>
+								<p class="system_name"> <span class="system_icon sjj2"></span>联网审计分析平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show jcj">
+							<li >
+								<p class="system_name"> <span class="system_icon jcj2"></span>内网网站</p>							
+							</li>
+						</ul>
+						<ul class="system_show fgw">
+							<li>
+								<p class="system_name"> <span class="system_icon fgw2"></span>涉案物品价格鉴定系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show sfj">
+							<li >
+								<p class="system_name"> <span class="system_icon sfj2"></span>内网网站</p>							
+							</li>
+						</ul>
+						<ul class="system_show bb">
+							<li >
+								<p class="system_name"> <span class="system_icon bb2"></span>权力清单系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon bb5"></span>许可清单系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show ydj">
+							<li>
+								<p class="system_name"> <span class="system_icon ydj4"></span><a style="color:#FFF" href="http://jg.kaipuyun.cn/cloud_web/users_loginIndex.action?data=1A1726E8EB9A5AF903D3B53729E636F0FE8622A6D5D86F1CD83078FE693FD85D0C2AB8CD48255E6F97985535B6CDD117" target="_blank">政府网络云监管平台</a></p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon ydj5"></span><a style="color:#FFF" href="http://yun.lwjy.net/" target="_blank">教育公共服务平台</a></p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon ydj9"></span><a style="color:#FFF" href="http://www.lwgtjy.gov.cn/TradeResourceList.seam?tabNum=1" target="_blank">莱芜市国有建设用地使用权交易系统</a></p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon ydj10"></span><a style="color:#FFF" href="http://zd.sddlr.gov.cn/ZDXXGKWeb/ASPXs/RelativePage.aspx?city=LaiWu" target="_blank">莱芜市征地信息公开查询系统</a></p>		
+							</li>
+						</ul>
+						<ul class="system_show zfb">
+							<li>
+								<p class="system_name"><span class="system_icon zfb2"></span>公共资源交易系统</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb5"></span>政府门户网站</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb8"></span>政务服务平台</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb11"></span>短信群发系统</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb14"></span>电子邮件系统</p>		
+							</li>
+						</ul>
+					</div>
+					<div class="right_content_content">
+						
+						<ul class="system_show res_search">
+							
+						</ul>
+						
+						<ul class="system_show rsj">
+							<li >
+								<p class="system_name"> <span class="system_icon rsj3"></span>公务员和事业单位网上报名</p>							
+							</li>
+						</ul>
+						<ul class="system_show gaj">
+							<li >
+								<p class="system_name"> <span class="system_icon gaj3"></span>笑脸警务服务平台</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon gaj6"></span>印章业治安管理信息系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon gaj9"></span>联动巡防系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show cxjtysw">
+							<li >
+								<p class="system_name"> <span class="system_icon cxjtysw3"></span>公交一卡通</p>							
+							</li>
+						</ul>
+						<ul class="system_show hbj">
+							<li >
+								<p class="system_name"> <span class="system_icon hbj3"></span>莱芜市机动车环保检测监管系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon hbj6"></span>环境监察移动执法系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show wjw">
+							<li >
+								<p class="system_name"> <span class="system_icon wjw3"></span>人口宏观管理与决策信息系统</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon wjw6"></span>全国流动人口计划生育服务管理工作平台</p>							
+							</li>
+							<li >
+								<p class="system_name"> <span class="system_icon wjw9"></span>卫生计生信息平台</p>							
+							</li>
+						</ul>
+						
+						
+						<ul class="system_show zjj">
+							<li>
+								<p class="system_name"> <span class="system_icon zjj3"></span>城建档案管理系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon zjj6"></span>5个部门网站</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon zjj9"></span>住宅专项维修资金管理系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon zjj12"></span>组织查核系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show nyj">
+							<li>
+								<p class="system_name"> <span class="system_icon nyj3"></span>畜产品质量安全监管平台</p>							
+							</li>
+						</ul>
+						<ul class="system_show cxswj">
+							<li>
+								<p class="system_name"> <span class="system_icon cxswj3"></span>水资源税信息管理系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show scjgj">
+							<li>
+								<p class="system_name"> <span class="system_icon scjgj3"></span>金质工程办公系统</p>							
+							</li>
+						</ul>
+						
+						
+						<ul class="system_show tjj">
+							<li>
+								<p class="system_name"> <span class="system_icon tjj3"></span>统计大数据</p>							
+							</li>
+						</ul>
+						<ul class="system_show czj">
+							<li>
+								<p class="system_name"> <span class="system_icon czj3"></span>税示支出管理信息系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show wgxj">
+							<li>
+								<p class="system_name"> <span class="system_icon wgxj3"></span>interlib集群管理系统</p>							
+							</li>
+						</ul>
+						<ul class="system_show mzj">
+							<li>
+								<p class="system_name"> <span class="system_icon mzj3"></span>社区信息网</p>							
+							</li>
+						</ul>
+						
+						
+						
+						<ul class="system_show qxj">
+							<li>
+								<p class="system_name"> <span class="system_icon qxj3"></span>国家突发事件气象预警信息一键式发布系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show dsj">
+							<li>
+								<p class="system_name"> <span class="system_icon dsj3"></span>执法360系统</p>							
+							</li>
+						</ul>
+						
+						<ul class="system_show swj">
+							<li>
+								<p class="system_name"> <span class="system_icon swj3"></span>外贸统计分析系统</p>							
+							</li>
+							<li>
+								<p class="system_name"> <span class="system_icon swj6"></span>广交会展位管理平台</p>							
+							</li>
+						</ul>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<ul class="system_show jcj">
+							<li >
+								<p class="system_name"> <span class="system_icon jcj3"></span>四风举报随手拍</p>							
+							</li>
+						</ul>
+						<ul class="system_show bb">
+							<li>
+								<p class="system_name"><span class="system_icon bb3"></span>责任清单系统</p>		
+							</li>
+						</ul>
+						<ul class="system_show ydj">
+							<li>
+								<p class="system_name"><span class="system_icon ydj6"></span><a style="color:#FFF" href="http://lwzhuisu.gov.cn/login.shtml" th:href="@{http://lwzhuisu.gov.cn/ipt/cityPlatform(token=${msg})}" target="_blank">重要产品追溯体系服务平台</a></p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon ydj7"></span><a style="color:#FFF" href="http://123.134.189.35:8888/gspt/eps/epsindex.jsp" target="_blank">权力清单系统</a></p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon ydj11"></span><a style="color:#FFF" href="http://120.192.73.140:8787/120/" target="_blank">120急救信息查询系统</a></p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon ydj12"></span><a style="color:#FFF" href="http://124.128.9.246:2001" target="_blank">莱芜市地址环境监测平台</a></p>		
+							</li>
+						</ul>
+						
+						<ul class="system_show zfb">
+							<li>
+								<p class="system_name"><span class="system_icon zfb3"></span>无线电监测</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb6"></span>应急平台</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb9"></span>综合治税系统</p>		
+							</li>
+							<li>
+								<p class="system_name"><span class="system_icon zfb12"></span>政务信息上报系统</p>		
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="/asserts/js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function(){
+			//重置屏幕宽高，根据宽高设置比例
+	  		    var pingmu_height = $(window).height();
+	  		    var pingmu_width = $(window).width();
+	  		    var a , b;
+	  		    if(pingmu_width >= 3840){
+	  		    	a = (pingmu_height/2160).toFixed(8);
+	  	  			b = (pingmu_width/3840).toFixed(8);
+	  
+	  		    } else {
+	  				a = (pingmu_height/1080).toFixed(8);
+	  				b = (pingmu_width/1920).toFixed(8);
+	  		    }
+	  			$("body").css("transform","scale("+b+","+a+")");
+		})(); 
+		window.addEventListener('resize', function(){
+			//重置屏幕宽高，根据宽高设置比例
+		    var pingmu_height = $(window).height();
+		    var pingmu_width = $(window).width();
+			var a = (pingmu_height/1080).toFixed(8);
+			var b = (pingmu_width/1920).toFixed(8);
+			$("body").css("transform","scale("+b+","+a+")");
+	  	});
+	</script>
+	<script>
+	function getSysOp(){
+		$.ajax({
+			url: "${pageContext.request.contextPath}/getSysOp",
+			data: {keyword:$(".keywords").val()},
+			success: function(data){
+				$(".system_show").hide();
+				$(".res_search").html("");
+				if(data.length != 0){
+					for(var i = 0;i<data.length;i++){
+						console.log(data[i].sys_id);
+						if((i+1)%3==1){
+							$(".left_content_content .res_search").append(
+								"<li><p class='system_name'>"+
+								"<span class='system_icon "+data[i].sys_id+"'></span>"+data[i].sys_name+"</p>"+
+								"</li>"	
+							);
+						}
+						if((i+1)%3==2){
+							$(".middle_content_content .res_search").append(
+									"<li><p class='system_name'>"+
+									"<span class='system_icon "+data[i].sys_id+"'></span>"+data[i].sys_name+"</p>"+
+									"</li>"	
+							);
+						}
+						if((i+1)%3==0){
+							$(".right_content_content .res_search").append(
+									"<li><p class='system_name'>"+
+									"<span class='system_icon "+data[i].sys_id+"'></span>"+data[i].sys_name+"</p>"+
+									"</li>"	
+							);
+						}
+					};
+					
+				}
+				if(data.length==0){
+					$(".left_content_content .res_search").append(
+							"<li class='res_null'>抱歉未找到您搜索的内容，请检查关键词是否有误。</li>"	
+						);
+				}
+				$(".res_search").show();
+				$(".right_title").html("搜索结果");
+				$(".keywords").val("");
+				
+				
+				
+				
+			}
+		});
+	}
+	</script>
+	<script src="/asserts/js/system/script.js" th:src="@{/asserts/js/system/script.js}" type="text/javascript" charset="utf-8"></script>
+</html>
+
+
+
+

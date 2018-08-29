@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/asserts/css/dataSource/style.css" th:href="@{/asserts/css/dataSource/style.css}"/>
+		<script src="/asserts/js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+		<script src="/asserts/js/echarts.min.js" th:src="@{/asserts/js/echarts.min.js}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p class="system_title">
+			<span>
+				<a href="bigDataApp" style="color:#b8e7ff">返回</a>
+			</span>
+			<span>
+				<a href="http://59.206.202.178:81/console/laiwu" style="color:#b8e7ff" target="_blank">共享交换平台</a>
+			</span>
+		</p>
+		<div class="right_system_title">
+			<iframe width="195" scrolling="no" height="18" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=1&color=%2300B0F0&icon=5&wind=0&num=1&site=12"></iframe>
+			<span class="curent_time">16:45:30</span>
+			<span class="right_sign">
+				
+			</span>
+			<p>2018年7月8日</p>
+		</div>
+		<div class="content">
+			<div class="left_content">
+				<p class="content_title">基础数据库</p>
+				<p class="module_title">
+					人口库
+				</p>
+				<ul class=" titile_list people_list">
+					<li class="active">结婚比例</li>
+					<li>年龄段统计</li>
+					<li>学历统计</li>
+					<li>人口密度分布</li>
+					<li>出生频率</li>
+				</ul>
+				<div id="people_img">
+					
+				</div>
+				<p class="module_title" style="margin-top: 7px;">
+					法人库
+				</p>
+				<ul class=" titile_list legal_list">
+					<li class="active">注册资本</li>
+					<li>企业性质</li>
+				</ul>
+				<div class="legal_img">
+					
+				</div>
+				<div class="bottom_img">
+					<div class="left_bottom">
+						<p class="module_title">
+							空间地理库
+						</p>
+					</div>
+					<div class="rignt_bottom">
+						<p class="module_title">
+							宏观经济库
+						</p>
+						<div id="legal_img">
+							<p class="btns_group">
+								<button>GDP</button>
+								<button>CPI</button>
+							</p>
+							<div id="legal_img_img">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="middle_content">
+				<p class="content_title">专题数据库</p>
+				<div class="person_trust">
+					
+				</div>
+				<p class="module_title">电子证照库</p>
+				<div class="ele">
+						<p class="ele_num">库内证照总数:<br/><span>1015461</span></p>
+						<div id="ele_img">
+							
+						</div>
+						<span class=" img_tips zgzh">资格证书</span>
+						<span class=" img_tips xkz">许可证执照</span>
+						<span class=" img_tips qy">企业资质</span>
+				</div>
+				<p class="module_title" style="margin-top: 10px;">网上办件</p>
+				<div id="web_office">
+					
+				</div>
+			</div>
+			<div class="right_content">
+				<p class="content_title">主题数据库</p>
+				<p class="module_title">工业</p>
+				<div id="industry">
+					
+				</div>
+				<p class="module_title">农业</p>
+				<div id="agriculture">
+					
+				</div>
+				<p class="module_title">食药监</p>
+				<div class="food_drugs">
+					<p class="food_drugs_tips company_tips">企业总数<br><span>45461</span></p>
+					<p class="food_drugs_tips product_tips">产品总数<br><span>45461</span></p>
+					<div id="company">
+						
+					</div>
+					<div id="product">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+			
+	</body>
+<script type="text/javascript">
+	(function(){
+		//重置屏幕宽高，根据宽高设置比例
+	    var pingmu_height = $(window).height();
+	    var pingmu_width = $(window).width();
+	    var a , b;
+	    if(pingmu_width >= 3840){
+	    	a = (pingmu_height/2160).toFixed(8);
+  			b = (pingmu_width/3840).toFixed(8);
+	    } else {
+			a = (pingmu_height/1080).toFixed(8);
+			b = (pingmu_width/1920).toFixed(8);
+	    }
+		$("body").css("transform","scale("+b+","+a+")");
+	})(); 
+	window.addEventListener('resize', function(){
+		//重置屏幕宽高，根据宽高设置比例
+	    var pingmu_height = $(window).height();
+	    var pingmu_width = $(window).width();
+		var a = (pingmu_height/1080).toFixed(8);
+		var b = (pingmu_width/1920).toFixed(8);
+		$("body").css("transform","scale("+b+","+a+")");
+    });
+</script>
+<script src="/asserts/js/dataSource/script.js" th:src="@{/asserts/js/dataSource/script.js}" type="text/javascript" charset="utf-8"></script>
+</html>
+
+
+
+
+
+
+
+
+
