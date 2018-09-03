@@ -12,7 +12,7 @@
 
 <body>
 
-    <canvas id="space" style="position:fixed;left:0;top:0;opacity:.5"></canvas>
+   <canvas id="space" style="position:fixed;left:0;top:0;opacity:.5;width:1920px;height:1080px;"></canvas> 
 
 
     <script>
@@ -219,7 +219,29 @@
     <script src="/assets/js/dataChange/echarts.min.js" th:src="@{/asserts/js/echarts.min.js}"></script>
     <script src="/assets/js/dataChange/laiwu.js" th:src="@{/asserts/js/dataChange/laiwu.js}"></script>
     <script src="/assets/js/dataChange/data.js" th:src="@{/asserts/js/dataChange/data.js}"> </script>
-
 </body>
-
+<script type="text/javascript">
+	(function(){
+		//重置屏幕宽高，根据宽高设置比例
+	    var pingmu_height = $(window).height();
+	    var pingmu_width = $(window).width();
+	    var a , b;
+	    if(pingmu_width >= 3840){
+	    	a = (pingmu_height/2160).toFixed(8);
+  			b = (pingmu_width/3840).toFixed(8);
+	    } else {
+			a = (pingmu_height/1080).toFixed(8);
+			b = (pingmu_width/1920).toFixed(8);
+	    }
+		$("body").css("transform","scale("+b+","+a+")");
+	})(); 
+	window.addEventListener('resize', function(){
+		//重置屏幕宽高，根据宽高设置比例
+	    var pingmu_height = $(window).height();
+	    var pingmu_width = $(window).width();
+		var a = (pingmu_height/1080).toFixed(8);
+		var b = (pingmu_width/1920).toFixed(8);
+		$("body").css("transform","scale("+b+","+a+")");
+    });
+</script>
 </html>
